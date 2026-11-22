@@ -1181,7 +1181,7 @@ collectionRadios.forEach(radio => {
   renderSelectedTests();
 
   console.log("SAHAYSETU: Lab test selection system loaded");
-
+})();
 /* ==========================================
    SAHAYSETU - PUBLIC APPOINTMENT TRACKING
 ========================================== */

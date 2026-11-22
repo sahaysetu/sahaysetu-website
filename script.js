@@ -1182,4 +1182,128 @@ collectionRadios.forEach(radio => {
 
   console.log("SAHAYSETU: Lab test selection system loaded");
 
+/* ==========================================
+   SAHAYSETU - PUBLIC APPOINTMENT TRACKING
+========================================== */
+
+(function () {
+
+  const trackingForm = document.getElementById("trackingForm");
+  const trackingInput = document.getElementById("trackingReference");
+  const trackingButton = document.getElementById("trackingButton");
+  const trackingResult = document.getElementById("trackingResult");
+
+  if (!trackingForm || !trackingInput ||
+      !trackingButton || !trackingResult) return;
+
+  trackingInput.addEventListener("input", function () {
+    this.value = this.value.toUpperCase().trim();
+  });
+
+  trackingForm.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+    const reference = trackingInput.value.trim().toUpperCase();
+
+    if (!/^SH-[A-F0-9]{10}$/.test(reference)) {
+      trackingResult.hidden = false;
+      trackingResult.className = "tracking-result error";
+      trackingResult.textContent =
+        "Please enter a valid SAHAYSETU booking reference.";
+      return;
+    }
+
+    trackingButton.disabled = true;
+    trackingButton.textContent = "Checking...";
+    trackingResult.hidden = false;
+    trackingResult.className = "tracking-result";
+    trackingResult.textContent = "Retrieving your appointment details...";
+
+    try {
+
+      const response = await fetch(
+        SAHAYSETU_API + "/api/bookings/" +
+        encodeURIComponent(reference)
+      );
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success || !result.booking) {
+        throw new Error(
+          result.message || "Booking record not found."
+        );
+      }
+
+      const booking = result.booking;
+
+      trackingResult.innerHTML = "";
+
+      const heading = document.createElement("h3");
+      heading.textContent = "Appointment Details";
+
+      const status = document.createElement("span");
+      status.className = "tracking-status";
+      status.textContent = booking.status || "Unknown";
+
+      trackingResult.append(heading, status);
+
+      const details = [
+        ["Reference", booking.bookingRef],
+        ["Doctor", booking.doctorName],
+        ["Specialty", booking.doctorSpecialty],
+        ["Consultation", booking.consultationType],
+        ["Appointment Date", booking.appointmentDate],
+        ["Preferred Time", booking.appointmentTime]
+      ];
+
+      details.forEach(([label, value]) => {
+
+        const line = document.createElement("div");
+        const strong = document.createElement("strong");
+
+        strong.textContent = label + ": ";
+
+        const text = document.createTextNode(value || "Not available");
+
+        line.append(strong, text);
+        trackingResult.appendChild(line);
+
+      });
+
+      const message = document.createElement("p");
+      message.style.marginBottom = "0";
+
+      const statusMessages = {
+        pending: "Your appointment request is awaiting review.",
+        confirmed: "Your appointment has been confirmed.",
+        rejected: "Your appointment request has been rejected.",
+        rescheduled: "Your appointment has been rescheduled."
+      };
+
+      message.textContent =
+        statusMessages[(booking.status || "").toLowerCase()] ||
+        "Please contact SAHAYSETU for an update.";
+
+      trackingResult.appendChild(message);
+
+    } catch (error) {
+
+      console.error("SAHAYSETU tracking error:", error);
+
+      trackingResult.className = "tracking-result error";
+      trackingResult.textContent =
+        error.message || "Unable to retrieve your booking.";
+
+    } finally {
+
+      trackingButton.disabled = false;
+      trackingButton.textContent = "Track Appointment";
+
+    }
+
+  });
+
+  console.log("SAHAYSETU: Appointment tracking loaded");
+
 })();

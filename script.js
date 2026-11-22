@@ -346,7 +346,8 @@ filterDoctors();
 // SAHAYSETU - APPOINTMENT BOOKING SYSTEM
 // DEMONSTRATION VERSION
 // ==========================================
-
+const SAHAYSETU_API =
+  "https://sahaysetu-booking-api.sahaysetu-official.workers.dev";
 const bookingStyles = document.createElement("style");
 
 bookingStyles.textContent = `
@@ -718,34 +719,82 @@ function reviewAppointment() {
       openBookingForm(selectedDoctor);
     });
 
-  bookingContent.querySelector("#confirmBooking")
-    .addEventListener("click", () => {
 
-      const reference =
-        "SH-" + Date.now().toString().slice(-8);
+bookingContent.querySelector("#confirmBooking")
+  .addEventListener("click", async function () {
+
+    const confirmButton = this;
+
+    confirmButton.disabled = true;
+    confirmButton.textContent = "Submitting appointment...";
+
+    const payload = {
+      patientName: patientName,
+      patientPhone: patientPhone,
+      doctorName: selectedDoctor.dataset.name || "Doctor",
+      doctorSpecialty: selectedDoctor.dataset.specialty || "",
+      consultationType: consultation,
+      appointmentDate: appointmentDate,
+      appointmentTime: appointmentTime
+    };
+
+    try {
+      const response = await fetch(
+        SAHAYSETU_API + "/api/bookings",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        }
+      );
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(
+          result.message || "Booking submission failed."
+        );
+      }
+
+      const reference = result.booking.bookingRef;
+
+      if (!reference) {
+        throw new Error("Booking reference missing.");
+      }
 
       bookingContent.innerHTML = `
         <div class="booking-success">
           <div class="success-icon">✓</div>
-          <h2>Demo Booking Created!</h2>
+
+          <h2>Appointment Request Received!</h2>
 
           <p>
-            Your demonstration booking details
-            have been generated successfully.
+            Your appointment request has been
+            successfully submitted to SAHAYSETU.
           </p>
 
           <div class="booking-reference"
-            id="bookingReference"></div>
+               id="bookingReference"></div>
+
+          <p><strong>Booking Status: Pending</strong></p>
 
           <p>
-            This is NOT a real appointment confirmation.
-            No doctor has been notified and no slot has
-            been reserved.
+            Your request is awaiting review.
+            This is not yet a confirmed appointment.
           </p>
 
           <button type="button"
             class="booking-submit"
-            id="finishBooking">
+            id="copyBookingReference">
+            Copy Reference Code
+          </button>
+
+          <button type="button"
+            class="booking-submit"
+            id="finishBooking"
+            style="background:#edf4f4;color:#183b50;margin-top:10px">
             Close
           </button>
         </div>
@@ -754,9 +803,44 @@ function reviewAppointment() {
       bookingContent.querySelector("#bookingReference")
         .textContent = "Reference: " + reference;
 
+      bookingContent.querySelector("#copyBookingReference")
+        .addEventListener("click", async function () {
+          try {
+            await navigator.clipboard.writeText(reference);
+            this.textContent = "Copied Successfully!";
+          } catch (error) {
+            this.textContent = reference;
+          }
+        });
+
       bookingContent.querySelector("#finishBooking")
         .addEventListener("click", closeBookingForm);
-    });
+
+    } catch (error) {
+      console.error("SAHAYSETU booking error:", error);
+
+      confirmButton.disabled = false;
+      confirmButton.textContent = "Retry Submission";
+
+      let errorMessage = bookingContent.querySelector(
+        "#bookingSubmissionError"
+      );
+
+      if (!errorMessage) {
+        errorMessage = document.createElement("p");
+        errorMessage.id = "bookingSubmissionError";
+
+        errorMessage.style.cssText =
+          "color:#c0392b;font-size:13px;margin-top:12px";
+
+        confirmButton.after(errorMessage);
+      }
+
+      errorMessage.textContent =
+        error.message || "Unable to submit booking. Please try again.";
+    }
+  });
+
 }
 
 

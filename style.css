@@ -389,3 +389,161 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* ==========================================
+   SAHAYSETU - APPOINTMENT TRACKING
+========================================== */
+
+.tracking-section {
+  padding: 55px 7%;
+  background: #f3f8f8;
+}
+
+.tracking-card {
+  max-width: 1100px;
+  margin: auto;
+  padding: 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  background: #ffffff;
+  border: 1px solid #dce9e8;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(23, 61, 80, .07);
+}
+
+.tracking-icon {
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: #16877f;
+  background: #eaf5f3;
+  border-radius: 15px;
+}
+
+.tracking-icon svg {
+  width: 38px;
+  height: 38px;
+}
+
+.tracking-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.tracking-content h2 {
+  color: #173d50;
+  font-size: 27px;
+  margin: 9px 0;
+}
+
+.tracking-content > p {
+  color: #71838b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.tracking-form label {
+  display: block;
+  color: #294653;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.tracking-input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.tracking-input-row input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #dce6e8;
+  border-radius: 9px;
+  color: #173d50;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.tracking-input-row button {
+  border: none;
+  border-radius: 9px;
+  padding: 0 22px;
+  background: #16877f;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tracking-input-row button:disabled {
+  opacity: .65;
+  cursor: wait;
+}
+
+.tracking-result {
+  margin-top: 20px;
+  padding: 17px;
+  border-radius: 11px;
+  background: #edf7f6;
+  color: #294653;
+  font-size: 14px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.tracking-result.error {
+  background: #fff0ef;
+  color: #a93226;
+}
+
+.tracking-result h3 {
+  color: #173d50;
+  margin: 0 0 10px;
+}
+
+.tracking-result .tracking-status {
+  display: inline-block;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  background: #dcefeb;
+  color: #126b62;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.tracking-help {
+  display: block;
+  margin-top: 13px;
+  color: #71838b;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .tracking-section {
+    padding: 35px 5%;
+  }
+
+  .tracking-card {
+    padding: 22px 17px;
+    gap: 13px;
+    flex-direction: column;
+  }
+
+  .tracking-content h2 {
+    font-size: 23px;
+  }
+
+  .tracking-input-row {
+    flex-direction: column;
+  }
+
+  .tracking-input-row button {
+    min-height: 48px;
+  }
+}

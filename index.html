@@ -129,6 +129,73 @@
       </div>
     </section>
 
+    </section>
+
+    <!-- SAHAYSETU - APPOINTMENT TRACKING -->
+    <section class="tracking-section" id="track-appointment">
+      <div class="tracking-card">
+
+        <div class="tracking-icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <rect x="8" y="7" width="32" height="35"
+              rx="5" stroke="currentColor" stroke-width="2.8"/>
+            <path d="M16 17h16M16 24h10M16 31h7"
+              stroke="currentColor" stroke-width="2.8"
+              stroke-linecap="round"/>
+            <path d="m29 31 3 3 6-7"
+              stroke="currentColor" stroke-width="2.8"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="tracking-content">
+          <div class="eyebrow">APPOINTMENT SERVICES</div>
+          <h2>Track Your Appointment</h2>
+
+          <p>
+            Already booked an appointment with SAHAYSETU?
+            Enter your booking reference to check its latest status.
+          </p>
+
+          <form id="trackingForm" class="tracking-form">
+            <label for="trackingReference">
+              Booking Reference
+            </label>
+
+            <div class="tracking-input-row">
+              <input
+                type="text"
+                id="trackingReference"
+                placeholder="Example: SH-51BB216BF1"
+                maxlength="20"
+                pattern="SH-[A-Fa-f0-9]{10}"
+                autocomplete="off"
+                required>
+
+              <button type="submit" id="trackingButton">
+                Track Appointment
+              </button>
+            </div>
+          </form>
+
+          <div id="trackingResult"
+               class="tracking-result"
+               aria-live="polite"
+               hidden>
+          </div>
+
+          <small class="tracking-help">
+            Your booking reference was provided when you submitted
+            your appointment request.
+          </small>
+        </div>
+
+      </div>
+    </section>
+    <!-- END APPOINTMENT TRACKING -->
+
+    <section class="services-section" id="services">
+
     <section class="services-section" id="services">
       <div class="section-heading">
         <div class="eyebrow">OUR SERVICES</div>

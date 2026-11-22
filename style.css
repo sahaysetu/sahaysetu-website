@@ -1,0 +1,391 @@
+:root {
+  --navy: #173D50;
+  --teal: #16877F;
+  --text: #294653;
+  --muted: #71838B;
+  --background: #F5F8FA;
+  --white: #FFFFFF;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; width: 100%; }
+
+body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--background);
+}
+
+.site {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  min-height: 78px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px clamp(18px,5%,65px);
+  border-bottom: 1px solid #eaf0f1;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--navy);
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.brand-symbol { width: 42px; height: 42px; color: var(--teal); }
+.brand-symbol svg { width: 100%; height: 100%; }
+.brand-accent { color: var(--teal); }
+
+.brand small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.nav { display: flex; align-items: center; gap: clamp(12px,2vw,28px); }
+.nav a { text-decoration: none; font-size: 13px; color: var(--text); }
+.nav a:hover { color: var(--teal); }
+
+.header-button {
+  background: var(--teal);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.hero {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0,1fr);
+  align-items: center;
+  gap: 35px;
+  padding: 55px clamp(20px,6%,75px);
+  background: linear-gradient(120deg,#EAF5F4,#F5F8FA);
+}
+
+.hero-content { width: 100%; max-width: 650px; margin: auto; }
+.eyebrow { color: var(--teal); font-size: 11px; font-weight: 800; letter-spacing: 2px; }
+
+.live-dot, .status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22A88E;
+  margin-right: 6px;
+}
+
+.hero h1 {
+  color: var(--navy);
+  font-size: clamp(34px,5vw,53px);
+  line-height: 1.14;
+  margin: 20px 0 16px;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 span { color: var(--teal); }
+
+.hero-description {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 570px;
+  margin: 0;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 550px;
+  margin-top: 25px;
+  background: white;
+  border: 1px solid #e0e9e9;
+  border-radius: 11px;
+  padding: 6px 7px 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box svg { width: 20px; flex-shrink: 0; color: var(--muted); }
+.search-box input { min-width: 0; flex: 1; border: none; outline: none; padding: 12px 0; font-size: 13px; }
+
+.search-box button {
+  border: none;
+  border-radius: 8px;
+  background: var(--teal);
+  color: white;
+  padding: 12px 17px;
+  cursor: pointer;
+}
+
+.hero-note { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 19px; font-size: 11px; color: var(--muted); }
+.hero-note span { color: var(--teal); font-weight: bold; }
+.hero-visual { display: none; }
+
+.services-section { width: 100%; padding: 55px clamp(18px,5%,65px); background: white; }
+.section-heading { text-align: center; margin-bottom: 30px; }
+
+.section-heading h2 {
+  font-size: clamp(24px,3vw,32px);
+  color: var(--navy);
+  margin: 12px 0 8px;
+}
+
+.section-heading p { color: var(--muted); font-size: 14px; }
+
+.service-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 15px; width: 100%; }
+
+.service-card {
+  min-width: 0;
+  background: white;
+  padding: 21px 15px;
+  border: 1px solid #E6EEEE;
+  border-radius: 13px;
+  transition: .2s;
+}
+
+.service-card:hover {
+  border-color: #8BC9C1;
+  transform: translateY(-3px);
+  box-shadow: 0 9px 25px #173D5010;
+}
+
+.icon-wrap { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px; }
+.icon-wrap svg { width: 30px; height: 30px; }
+.teal { background: #E4F4F1; color: #16877F; }
+.blue { background: #E9F0FC; color: #4777C8; }
+.purple { background: #F0EBFA; color: #8768BD; }
+.orange { background: #FFF1E5; color: #D68A39; }
+
+.service-card h3 { color: var(--navy); font-size: 15px; margin: 17px 0 8px; }
+.service-card p { color: var(--muted); font-size: 12px; line-height: 1.7; margin: 0 0 15px; }
+.card-link { font-size: 11px; color: var(--teal); font-weight: bold; }
+.search-message { text-align: center; color: var(--teal); font-size: 13px; margin-top: 18px; }
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  padding: 45px clamp(20px,6%,75px);
+  background: #EFF6F6;
+}
+
+.about-section h2 { font-size: 29px; color: var(--navy); line-height: 1.3; }
+.about-section p { font-size: 14px; line-height: 1.8; color: var(--muted); }
+.about-highlight { padding: 25px; background: white; border-radius: 14px; border: 1px solid #E2ECEC; }
+.highlight-symbol { color: var(--teal); font-size: 48px; font-weight: bold; }
+.about-highlight h3 { color: var(--navy); }
+
+footer { background: var(--navy); color: white; text-align: center; padding: 35px 15px; }
+.footer-brand { font-size: 23px; font-weight: bold; letter-spacing: 2px; }
+footer p { font-size: 13px; color: #D0E0E6; }
+footer small { display: block; color: #B4C7D0; margin-top: 10px; font-size: 10px; }
+
+@media (min-width: 1000px) {
+  .hero { grid-template-columns: 1.1fr .9fr; padding-top: 65px; padding-bottom: 65px; }
+  .hero-content { margin: 0; }
+  .hero-visual { display: flex; min-height: 320px; position: relative; justify-content: center; align-items: center; }
+  .visual-circle { width: 270px; height: 270px; border-radius: 50%; background: #DCEEEB; position: absolute; }
+  .visual-card { z-index: 1; width: 290px; padding: 15px; background: white; border-radius: 18px; box-shadow: 0 15px 45px #173D5015; }
+  .visual-top { font-size: 8px; color: var(--muted); }
+  .doctor-illustration svg { width: 100%; height: 175px; }
+  .visual-caption { text-align: center; }
+  .visual-caption strong, .visual-caption span { display: block; margin-top: 5px; }
+  .visual-caption span { font-size: 10px; color: var(--muted); }
+  .medical-cross { position: absolute; top: 8px; right: 5%; font-size: 55px; color: #16877F; font-weight: bold; }
+  .floating-chip { position: absolute; bottom: 8px; right: 0; background: white; border-radius: 30px; padding: 12px 16px; box-shadow: 0 5px 20px #173D5010; font-size: 11px; }
+  .service-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  .about-section { grid-template-columns: 1.3fr .7fr; align-items: center; }
+}
+
+@media (max-width: 650px) {
+  .nav { display: none; }
+  .header-button { padding: 10px; font-size: 10px; }
+  .brand { font-size: 19px; }
+  .brand-symbol { width: 34px; height: 34px; }
+  .service-card { padding: 16px 11px; }
+  .service-card h3 { font-size: 13px; }
+}
+
+.doctor-section { padding: 55px clamp(18px,5%,65px); background: #F5F8FA; }
+.doctor-heading { text-align: center; margin-bottom: 28px; }
+.doctor-heading h2 { color: var(--navy); font-size: 30px; margin: 12px 0; }
+.doctor-heading p { color: var(--muted); font-size: 14px; }
+
+.doctor-filters { display: flex; gap: 12px; max-width: 750px; margin: 0 auto 28px; }
+.doctor-filters input, .doctor-filters select {
+  flex: 1; min-width: 0; padding: 14px; border: 1px solid #dce7e9;
+  border-radius: 9px; background: white; font-size: 13px;
+}
+
+.doctor-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 15px; max-width: 1100px; margin: auto; }
+.doctor-card { min-width: 0; padding: 20px 14px; background: white; border: 1px solid #e2ebed; border-radius: 13px; }
+.doctor-avatar { width: 57px; height: 57px; display: grid; place-items: center; border-radius: 50%; font-weight: bold; font-size: 19px; margin-bottom: 12px; }
+.avatar-teal { background:#DDF1ED; color:#16877F; }
+.avatar-blue { background:#E4EDFA; color:#4777C8; }
+.avatar-purple { background:#EEE8F8; color:#8768BD; }
+.avatar-orange { background:#FFF0E2; color:#CE843B; }
+.demo-label { display: inline-block; background: #FFF4DD; color: #946A24; padding: 5px 7px; border-radius: 5px; font-size: 9px; font-weight: bold; }
+.doctor-card h3 { color: var(--navy); font-size: 16px; margin: 12px 0 5px; }
+.doctor-card p { font-size: 12px; line-height: 1.6; }
+.doctor-card .specialty { color: var(--teal); font-weight: bold; }
+.doctor-info { color: var(--muted); }
+.fee { color: var(--navy); font-weight: bold; }
+.profile-button { width: 100%; padding: 11px; border: 0; border-radius: 8px; background: var(--teal); color: white; cursor: pointer; }
+.doctor-disclaimer { text-align: center; color: var(--muted); font-size: 10px; margin-top: 25px; }
+
+@media(min-width:850px) { .doctor-grid { grid-template-columns: repeat(4,minmax(0,1fr)); } }
+@media(max-width:450px) { .doctor-filters { flex-direction: column; } }
+
+/* SAHAYSETU - RESPONSIVE REFINEMENTS */
+@media (max-width: 480px) {
+  .doctor-grid { grid-template-columns: 1fr; }
+  .doctor-section { padding: 40px 16px; }
+  .doctor-heading h2 { font-size: 25px; }
+  .booking-modal { padding: 21px 17px; max-height: 88vh; border-radius: 14px; }
+  .booking-modal h2 { font-size: 21px; }
+  .booking-overlay { padding: 10px; }
+}
+
+.profile-button, .booking-submit, .header-button, .search-box button {
+  transition: background .2s ease, transform .2s ease;
+}
+.profile-button:hover, .booking-submit:hover { background: #116F69; }
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #16877F;
+  outline-offset: 3px;
+}
+
+/* SAHAYSETU - LAB TESTS */
+.lab-section { padding: 75px 6%; background: #f4f8fb; scroll-margin-top: 30px; }
+.lab-section .section-heading { text-align: center; margin-bottom: 35px; }
+.lab-search { max-width: 600px; margin: 0 auto 30px; }
+.lab-search input { width: 100%; box-sizing: border-box; padding: 15px 18px; border: 1px solid #dce6e8; border-radius: 10px; font-size: 15px; background: white; }
+.lab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; max-width: 1100px; margin: auto; }
+.lab-card { background: white; border: 1px solid #e2eaea; border-radius: 15px; padding: 25px; transition: .25s ease; }
+.lab-card:hover { transform: translateY(-4px); border-color: #16877f; box-shadow: 0 10px 25px rgba(23,61,80,.07); }
+.lab-card h3 { color: #173d50; font-size: 18px; }
+.lab-card p { color: #71838b; line-height: 1.7; font-size: 14px; }
+.lab-card span { color: #16877f; font-size: 12px; font-weight: 700; }
+.lab-notice { max-width: 1050px; margin: 30px auto 0; padding: 16px; background: #fff7e8; color: #805b19; border-radius: 10px; font-size: 13px; line-height: 1.7; }
+
+@media (max-width: 768px) { .lab-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .lab-grid { grid-template-columns: 1fr; } }
+
+/* SAHAYSETU - LAB TEST SELECTION */
+.lab-select-button {
+  display: block; width: 100%; margin-top: 18px; padding: 12px;
+  border: 1px solid #16877f; border-radius: 9px; background: white;
+  color: #16877f; font-size: 14px; font-weight: 600; cursor: pointer; transition: .2s ease;
+}
+.lab-select-button:hover { background: #16877f; color: white; }
+.lab-select-button.selected { background: #16877f; color: white; }
+.lab-booking-panel { max-width: 850px; margin: 35px auto 0; padding: 25px; background: white; border: 1px solid #dce6e8; border-radius: 15px; }
+.lab-booking-panel h3 { color: #173d50; }
+.lab-selected-item { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid #e8eeee; color: #405461; }
+.lab-remove-button { border: 0; background: #fff0f0; color: #c0392b; padding: 7px 12px; border-radius: 7px; cursor: pointer; }
+
+/* SAHAYSETU - PROFESSIONAL LAB DROPDOWN */
+.preferred-lab-section { margin: 25px 0; max-width: 650px; }
+.preferred-lab-section label { display: block; color: var(--navy); font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+.lab-dropdown-wrap { position: relative; }
+.lab-dropdown-wrap select {
+  width: 100%; min-height: 56px; padding: 14px 45px 14px 16px;
+  border: 1px solid #d6e3e3; border-radius: 12px; background: #fff;
+  color: var(--navy); font-size: 15px; font-weight: 600; cursor: pointer; outline: none; appearance: auto;
+}
+.lab-dropdown-wrap select:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(22, 135, 127, 0.12); }
+.lab-offer-note { color: var(--muted); font-size: 12px; margin-top: 9px; }
+
+/* SAHAYSETU - COMPACT LAB TEST CARDS */
+.lab-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.lab-card { min-width: 0; padding: 14px; border-radius: 12px; display: flex; flex-direction: column; align-items: flex-start; gap: 9px; }
+.lab-card h3 { font-size: 14px; line-height: 1.35; margin: 0; }
+.lab-card p { display: none; }
+.lab-card span { font-size: 11px; }
+.lab-select-button { width: 100%; padding: 9px 8px; margin-top: auto; border: 1px solid var(--teal); border-radius: 8px; background: white; color: var(--teal); font-size: 12px; font-weight: 700; cursor: pointer; }
+.lab-select-button:active { background: #e8f5f3; }
+
+.custom-test-section { margin-top: 22px; }
+.custom-test-section label { display: block; color: var(--navy); font-weight: 700; margin-bottom: 9px; }
+.custom-test-input { display: flex; gap: 9px; }
+.custom-test-input input { flex: 1; min-width: 0; padding: 12px; border: 1px solid #d6e3e3; border-radius: 9px; }
+.custom-test-input button { padding: 10px 16px; background: var(--teal); color: white; border: 0; border-radius: 9px; font-weight: 700; }
+
+@media (max-width: 600px) {
+  .lab-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .lab-card { padding: 12px; }
+}
+
+/* SAHAYSETU - SELECTED TESTS SUMMARY */
+.selected-tests-section { margin-top: 22px; padding: 16px; background: #f2f8f7; border: 1px solid #dceae7; border-radius: 12px; }
+.selected-tests-section h3 { color: var(--navy); font-size: 16px; margin: 0 0 12px; }
+.empty-selection { color: var(--muted); font-size: 13px; margin: 0; }
+.selected-test-item { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 0; border-bottom: 1px solid #dceae7; color: var(--text); font-size: 13px; }
+.selected-test-item:last-child { border-bottom: none; }
+.remove-selected-test { border: none; background: #fde9e9; color: #b42318; border-radius: 7px; padding: 6px 10px; font-weight: 700; cursor: pointer; }
+
+/* SAHAYSETU - SELECTED LAB DISPLAY */
+.selected-lab-name { margin: 0 0 12px; padding: 10px 12px; background: #e5f4f0; border-radius: 8px; color: #147a68; font-size: 13px; font-weight: 700; }
+
+/* SAHAYSETU - SAMPLE COLLECTION OPTIONS */
+.collection-section { margin-top: 24px; padding: 18px; background: #fff; border: 1px solid #dce8e8; border-radius: 13px; }
+.collection-section h3 { color: var(--navy); font-size: 17px; margin: 0 0 7px; }
+.collection-section > p { color: var(--muted); font-size: 13px; margin-bottom: 15px; }
+.collection-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.collection-option { display: flex; align-items: flex-start; gap: 10px; padding: 15px; border: 1px solid #dce8e8; border-radius: 10px; cursor: pointer; }
+.collection-option:has(input:checked) { border: 2px solid var(--teal); background: #f0faf8; }
+.collection-option input { accent-color: var(--teal); margin-top: 3px; }
+.collection-option strong { display: block; color: var(--navy); font-size: 13px; }
+.collection-option small { display: block; color: var(--muted); font-size: 11px; margin-top: 5px; }
+@media (max-width: 600px) { .collection-options { grid-template-columns: 1fr; } }
+
+/* SAHAYSETU - LAB PATIENT DETAILS */
+.lab-patient-section { margin-top: 24px; padding: 18px; background: #fff; border: 1px solid #dce8e8; border-radius: 13px; }
+.lab-patient-section h3 { color: var(--navy); font-size: 17px; margin: 0 0 7px; }
+.lab-patient-section > p { color: var(--muted); font-size: 13px; margin-bottom: 17px; }
+.lab-patient-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+.patient-field { margin-bottom: 15px; }
+.patient-field label { display: block; color: var(--text); font-size: 13px; font-weight: 700; margin-bottom: 7px; }
+.patient-field input, .patient-field select, .patient-field textarea { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid #d6e3e3; border-radius: 9px; background: #fff; color: var(--navy); font-size: 14px; }
+.lab-address-field { display: none; }
+
+@media (max-width: 600px) {
+  .lab-patient-grid { grid-template-columns: 1fr; gap: 0; }
+}
+
+/* SAHAYSETU - SEQUENTIAL BOOKING FLOW */
+[hidden] { display: none !important; }
+.lab-next-button { display: block; width: 100%; margin-top: 18px; padding: 14px 18px; border: none; border-radius: 10px; background: var(--teal); color: white; font-size: 14px; font-weight: 700; cursor: pointer; transition: 0.2s ease; }
+.lab-next-button:hover { background: var(--navy); }
+.lab-next-button:disabled { opacity: 0.5; cursor: not-allowed; }
+.selected-tests-section, .collection-section, .lab-patient-section { scroll-margin-top: 25px; animation: bookingStepReveal 0.35s ease; }
+
+@keyframes bookingStepReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}

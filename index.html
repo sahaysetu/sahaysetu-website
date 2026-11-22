@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173D50">
+  <meta name="description" content="SAHAYSETU — Your Healthcare Connection. Discover doctors, diagnostic tests and connected healthcare services.">
+  <title>SAHAYSETU | Your Healthcare Connection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="site">
+
+  <header class="header">
+    <a class="brand" href="#home">
+      <span class="brand-symbol">
+        <svg viewBox="0 0 48 48" fill="none">
+          <path d="M8 25h9l5-12 7 23 5-11h7"
+            stroke="currentColor" stroke-width="3.5"
+            stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="24" cy="24" r="21"
+            stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </span>
+      <span>SAHAY<span class="brand-accent">SETU</span>
+        <small>YOUR HEALTHCARE CONNECTION</small>
+      </span>
+    </a>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#doctors">Find Doctors</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="header-button" href="#services">Explore Services</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="live-dot"></span>
+          HEALTHCARE, CONNECTED
+        </div>
+
+        <h1>Better healthcare.<br>
+          <span>Within your reach.</span>
+        </h1>
+
+        <p class="hero-description">
+          Discover qualified doctors, access online
+          consultations, book diagnostic tests and
+          connect with pharmacy partners — all in one place.
+        </p>
+
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="11" cy="11" r="7"
+              stroke="currentColor" stroke-width="2"/>
+            <path d="m16 16 4 4"
+              stroke="currentColor" stroke-width="2"
+              stroke-linecap="round"/>
+          </svg>
+          <input id="serviceSearch"
+            placeholder="Search doctors, tests, services...">
+          <button id="searchButton">Search</button>
+        </div>
+
+        <div class="hero-note">
+          <span>✓</span> Connected healthcare services
+          <span>✓</span> Convenient access
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-circle"></div>
+        <div class="medical-cross">+</div>
+
+        <div class="visual-card">
+          <div class="visual-top">
+            <span class="status-dot"></span>
+            HEALTHCARE AT YOUR FINGERTIPS
+          </div>
+
+          <div class="doctor-illustration">
+            <svg viewBox="0 0 220 190" fill="none">
+              <circle cx="110" cy="83" r="67"
+                fill="#E4F2F0"/>
+              <path d="M64 177c4-44 23-64 46-64s42 20 46 64"
+                fill="#16877F"/>
+              <path d="M88 110v22l22 22 22-22v-22"
+                fill="#fff"/>
+              <path d="M83 50c0-22 12-35 29-35s29 13 29 35v19
+                c0 21-13 38-29 38S83 90 83 69V50Z"
+                fill="#E9BFA3"/>
+              <path d="M82 55c-7-32 10-48 31-48
+                24 0 37 18 29 48l-9-14
+                c-12 3-27 0-39-8l-12 22Z"
+                fill="#263F50"/>
+              <path d="M72 129c-18 8-29 25-32 48h140
+                c-3-23-14-40-32-48l-27 28-27-28Z"
+                fill="#fff"/>
+              <path d="M110 157v-21"
+                stroke="#16877F" stroke-width="3"/>
+              <path d="M110 139c-16-22-29-4-13 6
+                5 4 10 6 13 10 3-4 8-6 13-10
+                16-10 3-28-13-6Z"
+                fill="#16877F"/>
+              <path d="M147 142c16 0 20 13 20 25"
+                stroke="#16877F" stroke-width="4"
+                stroke-linecap="round"/>
+              <circle cx="167" cy="169" r="7"
+                fill="#16877F"/>
+            </svg>
+          </div>
+
+          <div class="visual-caption">
+            <strong>Care that connects</strong>
+            <span>Doctors • Diagnostics • Pharmacy</span>
+          </div>
+        </div>
+
+        <div class="floating-chip">
+          <span>✦</span> Connected care
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="services">
+      <div class="section-heading">
+        <div class="eyebrow">OUR SERVICES</div>
+        <h2>Healthcare, made simpler.</h2>
+        <p>Choose the service you need to get started.</p>
+      </div>
+
+      <div class="service-grid" id="serviceGrid">
+
+        <article class="service-card"
+          data-key="doctor specialist physician appointment"
+          data-target="doctors">
+          <div class="icon-wrap teal">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M15 9v11a9 9 0 0 0 18 0V9"
+                stroke="currentColor" stroke-width="3"
+                stroke-linecap="round"/>
+              <path d="M11 8h8M29 8h8"
+                stroke="currentColor" stroke-width="3"
+                stroke-linecap="round"/>
+              <circle cx="24" cy="34" r="5"
+                stroke="currentColor" stroke-width="3"/>
+              <path d="M24 39v4"
+                stroke="currentColor" stroke-width="3"/>
+            </svg>
+          </div>
+          <h3>Find a Doctor</h3>
+          <p>Discover doctors by specialty, experience and location.</p>
+          <span class="card-link">Explore doctors →</span>
+        </article>
+
+        <article class="service-card"
+          data-key="telemedicine video online consultation"
+          data-target="online-consultation">
+          <div class="icon-wrap blue">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="5" y="10" width="27" height="28"
+                rx="5" stroke="currentColor" stroke-width="3"/>
+              <path d="m32 19 11-6v22l-11-6"
+                stroke="currentColor" stroke-width="3"
+                stroke-linejoin="round"/>
+              <path d="M18 18v12m-6-6h12"
+                stroke="currentColor" stroke-width="3"
+                stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Online Consultation</h3>
+          <p>Connect with doctors through remote consultations.</p>
+          <span class="card-link">Consult online →</span>
+        </article>
+
+        <article class="service-card"
+          data-key="laboratory lab blood test diagnostic"
+          data-target="lab-tests">
+          <div class="icon-wrap purple">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M17 6h14M21 6v14L10 38
+                c-2 4 1 6 5 6h18c4 0 7-2 5-6L27 20V6"
+                stroke="currentColor" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15 33h18"
+                stroke="currentColor" stroke-width="3"/>
+              <circle cx="23" cy="38" r="2"
+                fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Book Lab Tests</h3>
+          <p>Explore diagnostic tests and sample collection options.</p>
+          <span class="card-link">Explore tests →</span>
+        </article>
+
+        <article class="service-card"
+          data-key="pharmacy medicine prescription"
+          data-target="pharmacy">
+          <div class="icon-wrap orange">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M15 9a11 11 0 0 0 0 22h18
+                a11 11 0 0 0 0-22H15Z"
+                stroke="currentColor" stroke-width="3"/>
+              <path d="M24 10v20"
+                stroke="currentColor" stroke-width="3"/>
+              <path d="M19 20h10"
+                stroke="currentColor" stroke-width="3"
+                stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Online Pharmacy</h3>
+          <p>Order medicines through participating licensed pharmacies.</p>
+          <span class="card-link">Explore pharmacy →</span>
+        </article>
+
+      </div>
+
+      <div id="searchMessage" class="search-message"></div>
+    </section>
+
+    <section class="doctor-section" id="doctors">
+      <div class="doctor-heading">
+        <div class="eyebrow">OUR MEDICAL NETWORK</div>
+        <h2>Find the right doctor.</h2>
+        <p>Explore healthcare professionals in our network.</p>
+      </div>
+
+      <div class="doctor-filters">
+        <input id="doctorSearch"
+          placeholder="Search doctor or professional background...">
+
+        <select id="specialtyFilter">
+          <option value="">All Doctors</option>
+          <option value="paediatrics">Paediatrics & Urology Background</option>
+          <option value="cardiology">Cardiology Background</option>
+        </select>
+      </div>
+
+      <div class="doctor-grid" id="doctorGrid">
+        <article class="doctor-card"
+          data-name="Dr Sanoar Rahman"
+          data-specialty="paediatrics"
+          data-background="Ex House Physician, Department of Paediatrics and Urology, NBMC"
+          data-qualification="MBBS"
+          data-council="WBMC"
+          data-registration="83422"
+          data-experience="5">
+
+          <div class="doctor-avatar avatar-teal">SR</div>
+          <span class="demo-label">PROFILE DETAILS SUBMITTED</span>
+          <h3>Dr Sanoar Rahman</h3>
+          <p class="specialty">MBBS</p>
+          <p class="doctor-info">Ex House Physician</p>
+          <p class="doctor-info">Department of Paediatrics & Urology, NBMC</p>
+          <p class="doctor-info">5 Years of Experience</p>
+          <button class="profile-button">View profile</button>
+        </article>
+
+        <article class="doctor-card"
+          data-name="Dr Sohel Rana"
+          data-specialty="cardiology"
+          data-background="Ex House Physician, Department of Cardiology, SSKM Hospital"
+          data-qualification="MBBS"
+          data-council="WBMC"
+          data-registration="100948"
+          data-experience="1">
+
+          <div class="doctor-avatar avatar-blue">SR</div>
+          <span class="demo-label">PROFILE DETAILS SUBMITTED</span>
+          <h3>Dr Sohel Rana</h3>
+          <p class="specialty">MBBS</p>
+          <p class="doctor-info">Ex House Physician</p>
+          <p class="doctor-info">Department of Cardiology, SSKM Hospital</p>
+          <p class="doctor-info">1 Year of Experience</p>
+          <button class="profile-button">View profile</button>
+        </article>
+      </div>
+
+      <p id="doctorMessage" class="search-message"></p>
+      <p class="doctor-disclaimer">
+        Professional details are based on information submitted
+        to SAHAYSETU. Registration and credentials must be
+        independently verified before public listing or booking.
+      </p>
+    </section>
+
+    <!-- SAHAYSETU LAB TESTS SECTION -->
+    <section class="lab-section" id="lab-tests">
+      <div class="section-heading">
+        <div class="eyebrow">DIAGNOSTIC SERVICES</div>
+        <h2>Book Your Lab Tests.</h2>
+        <p>Explore diagnostic tests and convenient sample collection options.</p>
+      </div>
+
+      <div class="lab-search">
+        <input type="text" id="labSearch"
+          placeholder="Search blood tests, thyroid, diabetes...">
+      </div>
+
+      <!-- SAHAYSETU - LAB SELECTOR -->
+      <div class="preferred-lab-section">
+        <label for="preferredLab">Select Preferred Diagnostic Lab</label>
+        <div class="lab-dropdown-wrap">
+          <select id="preferredLab">
+            <option value="">Select Lab</option>
+            <option value="ML JAIN DIAGNOSTICS">ML JAIN DIAGNOSTICS — Up to 20% OFF</option>
+            <option value="ORGAN DIAGNOSTICS">ORGAN DIAGNOSTICS — Up to 25% OFF</option>
+            <option value="APOLLO DIAGNOSTICS">APOLLO DIAGNOSTICS — Up to 15% OFF</option>
+            <option value="LUPIN DIAGNOSTICS">LUPIN DIAGNOSTICS — Up to 20% OFF</option>
+          </select>
+        </div>
+        <p class="lab-offer-note">
+          Discounts are subject to participating laboratory
+          policies, eligible tests and daily offers.
+        </p>
+      </div>
+      <!-- END LAB SELECTOR -->
+
+      <div class="lab-grid" id="labGrid">
+        <article class="lab-card" data-test="cbc complete blood count">
+          <h3>Complete Blood Count (CBC)</h3>
+          <span>Haematology</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="hba1c">
+          <h3>HbA1c</h3><span>Diabetes</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="sodium potassium electrolytes">
+          <h3>Sodium & Potassium</h3><span>Electrolytes</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="urea creatinine">
+          <h3>Urea & Creatinine</h3><span>Kidney Function</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="lft liver function test">
+          <h3>LFT</h3><span>Liver Function</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="kft kidney function test">
+          <h3>KFT</h3><span>Kidney Function</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="rft renal function test">
+          <h3>RFT</h3><span>Renal Function</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="lipid profile cholesterol">
+          <h3>Lipid Profile</h3><span>Cardiac Risk</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="hbsag antihcv hepatitis">
+          <h3>HBsAg + Anti-HCV</h3><span>Infectious Disease</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="hiv 1 2 hiv i ii">
+          <h3>HIV I & II</h3><span>Infectious Disease</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="widal test">
+          <h3>Widal Test</h3><span>Serology</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="mp mpda malaria parasite">
+          <h3>MP + MPDA</h3><span>Malaria Testing</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="dengue ns1">
+          <h3>Dengue NS1</h3><span>Dengue Testing</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="dengue igm">
+          <h3>Dengue IgM</h3><span>Dengue Testing</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="scrub igm">
+          <h3>Scrub IgM</h3><span>Serology</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+        <article class="lab-card" data-test="thyroid profile tsh t3 t4">
+          <h3>Thyroid Profile</h3><span>Hormone Testing</span>
+          <button type="button" class="lab-select-button">+ Add Test</button>
+        </article>
+      </div>
+
+      <div class="custom-test-section">
+        <label for="customTestName">Need another test?</label>
+        <div class="custom-test-input">
+          <input type="text" id="customTestName"
+            placeholder="Enter custom test name">
+          <button type="button" id="addCustomTest">+ Add</button>
+        </div>
+      </div>
+
+      <!-- SELECTED TESTS SUMMARY -->
+      <div class="selected-tests-section" id="selectedTestsSection" hidden>
+        <h3>Selected Tests (<span id="selectedTestCount">0</span>)</h3>
+        <p id="selectedLabName" class="selected-lab-name">
+          Preferred Lab: Not selected
+        </p>
+        <div id="selectedTestsList">
+          <p class="empty-selection">No tests selected yet.</p>
+        </div>
+        <button type="button" id="continueToCollection" class="lab-next-button">
+          Continue to Collection →
+        </button>
+      </div>
+      <!-- END SELECTED TESTS SUMMARY -->
+
+      <!-- SAMPLE COLLECTION PREFERENCE -->
+      <div class="collection-section" id="collectionPreference" hidden>
+        <h3>Choose Sample Collection Method</h3>
+        <p>How would you prefer to provide your samples?</p>
+        <div class="collection-options">
+          <label class="collection-option">
+            <input type="radio" name="collectionMethod" value="Home Sample Collection">
+            <span>
+              <strong>Home Sample Collection</strong>
+              <small>Request sample collection at your doorstep.</small>
+            </span>
+          </label>
+          <label class="collection-option">
+            <input type="radio" name="collectionMethod" value="Visit Diagnostic Centre">
+            <span>
+              <strong>Visit Diagnostic Centre</strong>
+              <small>Visit the selected laboratory for sample collection.</small>
+            </span>
+          </label>
+        </div>
+      </div>
+      <!-- END SAMPLE COLLECTION PREFERENCE -->
+
+      <!-- SAHAYSETU - LAB PATIENT DETAILS -->
+      <div class="lab-patient-section" id="labPatientDetails" hidden>
+        <h3>Patient Details</h3>
+        <p>Enter the details of the person undergoing the tests.</p>
+        <div class="lab-patient-grid">
+          <div class="patient-field">
+            <label for="labPatientName">Patient Full Name *</label>
+            <input type="text" id="labPatientName" placeholder="Enter full name">
+          </div>
+          <div class="patient-field">
+            <label for="labPatientMobile">Mobile Number *</label>
+            <input type="tel" id="labPatientMobile"
+              placeholder="10-digit mobile number"
+              maxlength="10" inputmode="numeric">
+          </div>
+          <div class="patient-field">
+            <label for="labPatientAge">Age *</label>
+            <input type="number" id="labPatientAge"
+              placeholder="Age in years" min="0" max="120">
+          </div>
+          <div class="patient-field">
+            <label for="labPatientGender">Gender *</label>
+            <select id="labPatientGender">
+              <option value="">Select gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="patient-field lab-address-field" id="labAddressField">
+          <label for="labPatientAddress">Home Collection Address *</label>
+          <textarea id="labPatientAddress" rows="3"
+            placeholder="House number, street, area, city, PIN code"></textarea>
+        </div>
+        <div class="patient-field">
+          <label for="labBookingDate">Preferred Booking Date *</label>
+          <input type="date" id="labBookingDate">
+        </div>
+      </div>
+      <!-- END LAB PATIENT DETAILS -->
+
+      <p id="labMessage" class="search-message"></p>
+
+      <div class="lab-notice">
+        Diagnostic services are under development.
+        Test availability, pricing and sample collection
+        will be confirmed through participating laboratory partners.
+      </div>
+    </section>
+    <!-- END LAB TESTS SECTION -->
+
+    <section class="about-section" id="about">
+      <div>
+        <div class="eyebrow">OUR APPROACH</div>
+        <h2>One connection.<br>Multiple healthcare services.</h2>
+        <p>
+          SAHAYSETU aims to connect patients with independent
+          healthcare professionals and verified service partners
+          through a convenient digital platform.
+        </p>
+      </div>
+      <div class="about-highlight">
+        <div class="highlight-symbol">+</div>
+        <h3>Care, connected.</h3>
+        <p>Bringing healthcare services closer to people.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-brand">SAHAYSETU</div>
+    <p>Your Healthcare Connection</p>
+    <p>Kolkata, West Bengal, India</p>
+    <small>© 2026 SAHAYSETU. All rights reserved.</small>
+    <small>Demonstration platform — services are not yet operational.</small>
+  </footer>
+
+</div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
